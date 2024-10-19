@@ -300,6 +300,17 @@
 </script>
 
         @media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Adjust columns for smaller screens */
+    }
+    
+    .gallery img {
+        height: 200px; /* Reduce image height for mobile */
+    }
+}
+
+
+        @media (max-width: 768px) {
             .container {
                 width: 95%;
             }
