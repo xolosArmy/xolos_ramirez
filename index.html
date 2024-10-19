@@ -299,32 +299,25 @@
     });
 </script>
 
-        @media (max-width: 768px) {
+      @media (max-width: 768px) {
     .gallery {
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Adjust columns for smaller screens */
     }
-    
     .gallery img {
         height: 200px; /* Reduce image height for mobile */
     }
+    .container {
+        width: 95%;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
 }
 
-
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-            }
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav ul li {
-                margin: 10px 0;
-            }
-            .gallery {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            }
-        }
         #admin-login, #admin-panel {
             background-color: #fff;
             padding: 20px;
