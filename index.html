@@ -281,6 +281,23 @@
         <div id="lightbox">
     <img src="" alt="Full-size image">
 </div>
+        
+<script>
+    const lightbox = document.getElementById('lightbox');
+    const images = document.querySelectorAll('.gallery img');
+    const lightboxImg = lightbox.querySelector('img');
+
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            lightbox.classList.add('active');
+            lightboxImg.src = img.src;
+        });
+    });
+
+    lightbox.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+</script>
 
         @media (max-width: 768px) {
             .container {
