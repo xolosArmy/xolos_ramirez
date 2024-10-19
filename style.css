@@ -1,19 +1,1 @@
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px 0;
-}
-
-.gallery img {
-    width: 100%;
-    height: 250px; /* Set a fixed height */
-    object-fit: cover; /* Ensures images maintain aspect ratio and fill the box */
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-}
 
