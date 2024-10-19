@@ -282,24 +282,7 @@
             background-color: black;
             border: 2px solid white;
         }
-        
-        
-<script>
-    const lightbox = document.getElementById('lightbox');
-    const images = document.querySelectorAll('.gallery img');
-    const lightboxImg = lightbox.querySelector('img');
 
-    images.forEach(img => {
-        img.addEventListener('click', () => {
-            lightbox.classList.add('active');
-            lightboxImg.src = img.src;
-        });
-    });
-
-    lightbox.addEventListener('click', () => {
-        lightbox.classList.remove('active');
-    });
-</script>
 
       @media (max-width: 768px) {
     .gallery {
@@ -567,6 +550,24 @@
 
         // Load initial blog posts (in a real application, these would be loaded from a server)
         addBlogPost('Welcome to Our Blog', 'This is our first blog post about Xoloitzcuintles!');
+        
+        <script>
+    const lightbox = document.getElementById('lightbox');
+    const images = document.querySelectorAll('.gallery img');
+    const lightboxImg = lightbox.querySelector('img');
+
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            lightbox.classList.add('active');
+            lightboxImg.src = img.src;
+        });
+    });
+
+    lightbox.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+</script>
+    
     </script>
 </body>
 </html>
