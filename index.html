@@ -408,12 +408,16 @@
             <a href="#" class="cta-button" id="openForm">Solicitar Información</a>
         </section>
 
+       
         <section id="blog" class="main-content">
-            <h2>Blog</h2>
-            <div id="blogPosts">
+        <h2>Blog</h2>
+        <p>Our latest blog posts:</p>
+        <div id="blogPosts">
                 <!-- Blog posts will be dynamically loaded here -->
-            </div>
+        </div>
+        <iframe src="https://pretty-teams-create.loca.lt" width="100%" height="600" style="border:none;"></iframe>
         </section>
+
 
         <section id="admin-login" class="main-content" style="display: none;">
             <h2>Admin Login</h2>
@@ -522,15 +526,7 @@
             }
         });
 
-        // Handle new blog post submission
-        document.getElementById('newBlogPostForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const title = document.getElementById('postTitle').value;
-            const content = document.getElementById('postContent').value;
-
-            // In a real application, you would send this data to a server
-            // For this example, we'll just add it to the page
-            addBlogPost(title, content);
+        
 
             // Clear the form
             document.getElementById('postTitle').value = '';
