@@ -599,6 +599,34 @@
             navbar.classList.remove('scrolled');
         }
     });
+
+     <div class="container">
+        <h2>Realiza tu pago</h2>
+        <div id="paybutton-container"></div>
+        <script>
+            const paybutton = PayButton.create({
+                // Fixed amount set to 5 BCH
+                amount: 5,
+                currency: "BCH",
+                // Enabling OP_RETURN message
+                onMessage: function(message) {
+                    return message; // return the message to be sent as OP_RETURN
+                },
+                // Customize the appearance
+                style: {
+                    backgroundColor: "#ff3333",
+                    color: "#ffffff",
+                    borderRadius: "30px",
+                    padding: "10px 20px",
+                    fontSize: "20px",
+                },
+                // Adding a label for the button
+                label: "Pagar 5 BCH"
+            });
+            document.getElementById('paybutton-container').appendChild(paybutton);
+        </script>
+    </div>
+    
 </script>
      
     <script src="script.js"></script>
