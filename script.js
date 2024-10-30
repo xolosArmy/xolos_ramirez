@@ -7,7 +7,6 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
   });
 });
 
-<script>
 function makePayment() {
     const paymentData = {
         buttonName: "Bolero Ramirez",
@@ -23,4 +22,4 @@ function makePayment() {
     // Open payment URL in a new tab or window
     window.open(paymentUrl, '_blank');
 }
-</script>
+
