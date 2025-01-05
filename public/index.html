@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Criadero Xolos Ramirez - Los mejores perros prehispánicos Xoloitzcuintles en México. Nos dedicamos a la preservación de la raza.">
     <meta name="keywords" content="Xoloitzcuintle, criadero xoloitzcuintle, xoloitzcuintle precio, xoloitzcuintle criadero, xoloitzcuintle precio con pedigree">
     <meta property="og:title" content="Xolos Ramirez - Criadero de Xoloitzcuintles en México">
     <meta property="og:description" content="Criadero de Xoloitzcuintles en México, preservando una raza milenaria.">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xolos Ramirez - El Mejor Criadero de Perros Prehispánico Xoloitzcuintle en México. </title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
-    
-    
-    <div id="lightbox">
-    <img src="" alt="Full-size image">
-</div>
-    
+    <title>Xolos Ramirez - El Mejor Criadero de Perros Prehispánico Xoloitzcuintle en México</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/@paybutton/paybutton/dist/paybutton.js"></script> <!-- PayButton script -->
-
 </head>
 <body>
     <nav id="navbar">
@@ -30,13 +20,7 @@
             <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
         </ul>
     </nav>
-            
-               <section id="inicio">...</section>
-               <section id="sobre-nosotros">...</section>
-               <section id="galeria">...</section>
-               <section id="contacto">...</section>
-               <section id="blog">...</section>
-    
+
     <header class="hero" id="inicio">
         <div class="hero-content">
             <div class="logo-container">
@@ -51,246 +35,40 @@
     <div class="container">
         <section id="sobre-nosotros" class="main-content">
             <h2>Nuestra Pasión por los Xoloitzcuintles</h2>
-            <p>En Xolos Ramirez, no solo criamos perros; cultivamos un legado milenario. Nuestra dedicación a la raza Xoloitzcuintle va más allá de la simple reproducción; es una misión de preservar y honrar una parte vital de la herencia cultural mexicana.</p>
-            
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/oEWQbwtHdUI?si=7sHJNAFHylMt2VmD" frameborder="0" allowfullscreen></iframe>
-                </div>
-            
-            <p>Lo que nos distingue:</p>
-            <ul>
-                <li>Experiencia en la crianza del Xoloitzcuintle</li>
-                <li>Programas de crianza y sociabilizacion xoloitzcuintle único</li>
-                <li>Compromiso con la educación y concientización sobre la raza</li>
-                <li>Ambiente de crianza enriquecedor que fomenta perros equilibrados y felices</li>
-            </ul>
-            <a href="#" class="cta-button" id="openVideo">Ver Nuestra Historia</a>
+            <p>En Xolos Ramirez, no solo criamos perros; cultivamos un legado milenario...</p>
         </section>
 
         <section id="galeria" class="main-content">
             <h2>Galería de Nuestros Xolos</h2>
-            <link rel="stylesheet" href="styles.css">
-            <div class="gallery" id="galleryContainer">
-                <img src="https://i.imgur.com/CheOqSy.jpeg" alt="Bolero Ramirez, xoloitzcuintle macho talla intermedia color negro.">
-                <div
-                class="paybutton-widget"
-                to="bitcoincash:qrcnfcfcfvde9hwyvlmlqux2grdn5yp4lqx2lmlxtl" <!-- Your BCH address -->
-                amount="500000" <!-- Amount in satoshis (5 BCH = 5000000 satoshis) -->
-                text="Pay 5 BCH por Bolero Ramirez"
-                hover-text="Haz click para pagar con Bitcoin Cash"
-                success-text="Gracias! Tu pago ha sido recibido."
-                goal-amount="500000" <!-- Same as amount for the goal -->
-                op-return-field="true"
-                op-return="Felicidades!"
-            ></div>
-                <div class="overlay">
-    <div class="text">Bolero Ramirez, xoloitzcuintle macho talla intermedia color negro nacido este 7 de mayo del 2024.</div>
-  </div>
+            <div class="gallery">
+                <img src="https://i.imgur.com/CheOqSy.jpeg" alt="Bolero Ramirez, xoloitzcuintle">
+                <!-- Add more images if needed -->
             </div>
         </section>
 
         <section id="contacto" class="main-content">
             <h2>Contáctanos</h2>
-            <p>¿Listo para darle la bienvenida a un Xoloitzcuintle en tu vida? ¡Hablemos!</p>
             <p><i class="fas fa-envelope"></i> Email: contacto@xolosramirez.com</p>
             <p><i class="fas fa-phone"></i> Teléfono: 5518555993</p>
-            <p><i class="fas fa-map-marker-alt"></i> Ubicación: Ciudad de México, México</p>
-            <a href="#" class="cta-button" id="openForm">Solicitar Información</a>
         </section>
 
-       
-            <section id="blog" class="main-content">
-  <h2>Blog</h2>
-  <div id="blogPosts">
-    <!-- Aquí se cargarán los artículos dinámicamente -->
-  </div>
-</section>
-
-
-        
-
-      <div id="lightbox">
-        <img id="lightboxImage" src="" alt="Imagen ampliada">
+        <section id="blog" class="main-content">
+            <h2>Blog</h2>
+            <div id="blogPosts">
+                <!-- Blog articles will be dynamically loaded here -->
+            </div>
+        </section>
     </div>
 
- 
-
-    <script>
-        // Dynamic navigation highlighting
-        const navLinks = document.querySelectorAll("nav ul li a");
-        const sections = document.querySelectorAll("section");
-
-        window.addEventListener("scroll", () => {
-            let current = "";
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - sectionHeight / 3) {
-                    current = section.getAttribute("id");
-                }
-            });
-
-            navLinks.forEach((li) => {
-                li.classList.remove("active");
-                if (li.getAttribute("href").slice(1) === current) {
-                    li.classList.add("active");
-                }
-            });
-        });
-
-        // Navbar color change on scroll
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Dynamic gallery loading
-        const galleryContainer = document.getElementById('galleryContainer');
-        const dogNames = ['Luna', 'Azteca', 'Noche', 'Sol', 'Maya', 'Itzá', 'Quetzal', 'Jade', 'Olmeca', 'Tolteca'];
-
-        function loadGalleryImages(count = 8) {
-            for (let i = 0; i < count; i++) {
-                const div = document.createElement('div');
-                div.className = 'gallery-item';
-                const randomName = dogNames[Math.floor(Math.random() * dogNames.length)];
-                const randomAge = Math.floor(Math.random() * 10) + 1;
-                div.innerHTML = `
-                    <img src="/api/placeholder/400/400" alt="Xoloitzcuintle ${randomName}">
-                    <div class="overlay">
-                        <div class="text">${randomName}, ${randomAge} años</div>
-                    </div>
-                `;
-                galleryContainer.appendChild(div);
-            }
-        }
-
-        loadGalleryImages();
-
-        // Admin authentication
-        const adminUsername = 'admin';
-        const adminPassword = 'password123';
-
-        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const username = document.getElementById('adminUsername').value;
-            const password = document.getElementById('adminPassword').value;
-
-            if (username === adminUsername && password === adminPassword) {
-                document.getElementById('admin-login').style.display = 'none';
-                document.getElementById('admin-panel').style.display = 'block';
-            } else {
-                alert('Invalid credentials');
-            }
-        });
-
-        
-
-            // Clear the form
-            document.getElementById('postTitle').value = '';
-            document.getElementById('postContent').value = '';
-        });
-
-        function addBlogPost(title, content) {
-            const blogPosts = document.getElementById('blogPosts');
-            const postElement = document.createElement('div');
-            postElement.className = 'blog-post';
-            postElement.innerHTML = `
-                <h3>${title}</h3>
-                <p>${content}</p>
-                <hr>
-            `;
-            blogPosts.prepend(postElement);
-        }
-
-        // Add admin login link to footer
-        const footerIcons = document.querySelector('.social-icons');
-        const adminLink = document.createElement('a');
-        adminLink.href = '#';
-        adminLink.innerHTML = '<i class="fas fa-lock"></i>';
-        adminLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('admin-login').style.display = 'block';
-        });
-        footerIcons.appendChild(adminLink);
-
-        // Load initial blog posts (in a real application, these would be loaded from a server)
-        addBlogPost('Welcome to Our Blog', 'This is our first blog post about Xoloitzcuintles!');
-        
-        <script>
-    const lightbox = document.getElementById('lightbox');
-    const images = document.querySelectorAll('.gallery img');
-    const lightboxImg = lightbox.querySelector('img');
-
-    images.forEach(img => {
-        img.addEventListener('click', () => {
-            lightbox.classList.add('active');
-            lightboxImg.src = img.src;
-        });
-    });
-
-    lightbox.addEventListener('click', () => {
-        lightbox.classList.remove('active');
-    });
-</script>
-
-    <script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-     <div class="container">
-        <h2>Realiza tu pago</h2>
-        <div id="paybutton-container"></div>
-        <script>
-            const paybutton = PayButton.create({
-                // Fixed amount set to 5 BCH
-                amount: 5,
-                currency: "BCH",
-                // Enabling OP_RETURN message
-                onMessage: function(message) {
-                    return message; // return the message to be sent as OP_RETURN
-                },
-                // Customize the appearance
-                style: {
-                    backgroundColor: "#ff3333",
-                    color: "#ffffff",
-                    borderRadius: "30px",
-                    padding: "10px 20px",
-                    fontSize: "20px",
-                },
-                // Adding a label for the button
-                label: "Pagar 5 BCH"
-            });
-            document.getElementById('paybutton-container').appendChild(paybutton);
-        </script>
-    </div>
-        <footer>
+    <footer>
         <p>© 2024 Xolos Ramirez. Todos los derechos reservados.</p>
         <div class="social-icons">
             <a href="https://www.youtube.com/c/XolosRamirez"><i class="fab fa-youtube"></i></a>
             <a href="https://www.tiktok.com/@xolosramirezoficial"><i class="fab fa-tiktok"></i></a>
-<<<<<<< HEAD
-            <a href="https://www.x.com/xolosramirez1/"><i class="fab fa-instagram"></i></a>
-=======
-            <a href="https://x.com/xolosramirez1"><i class="fab fa-twitter"></i></a>
->>>>>>> 9a35cadb92f0d404d35a7964a2c8b3d3bbd206eb
+            <a href="https://www.instagram.com/xolosramirez_oficial/"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
-    
-</script>
-     
-    <script src="script.js"></script>
-    
-    </script>
-    
+
+    <script src="script.js" defer></script>
 </body>
 </html>
