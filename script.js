@@ -1,3 +1,4 @@
+// Navegación suave
 document.querySelectorAll('nav ul li a').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -7,12 +8,9 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
   });
 });
 
-// Import the functions you need from the SDKs you need
+// Importar Firebase y Firestore
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-
-// TODO: Importar otras librerías de Firebase si las necesitas, como Firestore o Authentication
-// Ejemplo:
-// import { getFirestore } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 
 // Configuración de Firebase
 const firebaseConfig = {
@@ -24,13 +22,9 @@ const firebaseConfig = {
   appId: "1:714862756395:web:7192e3a97e94b2c84da06e"
 };
 
-// Inicializar Firebase
+// Inicializar Firebase y Firestore
 const app = initializeApp(firebaseConfig);
-
-// Ejemplo: Configuración adicional (si usas Firestore o Storage, puedes inicializarlos aquí)
-// const db = getFirestore(app);
-// console.log("Firebase inicializado correctamente");
-
+const db = getFirestore(app);
 
 // Función para cargar los artículos del blog desde Firestore
 async function loadBlogPosts() {
@@ -82,5 +76,3 @@ async function loadBlogPosts() {
 
 // Llamar a la función cuando la página cargue
 document.addEventListener('DOMContentLoaded', loadBlogPosts);
-
-
