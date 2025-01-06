@@ -1,16 +1,7 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('nav ul li a').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth',
-    });
-  });
-});
-
-// Import the Firebase app and Firestore libraries
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+// Import Firebase and Firestore libraries
+import firebase from 'firebase/app';
+import 'firebase/firestore'; // Import Firestore
+import 'firebase/dataConnect'; // Import Data Connect
 
 // Firebase configuration
 const firebaseConfig = {
@@ -23,30 +14,42 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+firebase.initializeApp(firebaseConfig);
 
+// Function to load blog posts
 async function loadBlogPosts() {
   const blogContainer = document.getElementById('blogPosts');
-  blogContainer.innerHTML = "<p>Cargando artículos...</p>";
-  try {
-    console.log("Connecting to Firestore...");
-    const querySnapshot = await getDocs(collection(db, "blog"));
-    console.log("Documents fetched:", querySnapshot.size);
+  blogContainer.innerHTML = "<p>Cargando artículos...</p>"; // Loading message
 
-    blogContainer.innerHTML = ""; // Clear loading message
-    querySnapshot.forEach(doc => {
-      const post = doc.data();
-      console.log("Post data:", post);
+  try {
+    console.log("Obteniendo artículos del blog...");
+
+    // Replace 'your-data-source-id' with the actual Data Connect source ID
+    const dataSourceId = 'your-data-source-id'; 
+    const querySnapshot = await firebase.dataConnect.query(dataSourceId); 
+
+    blogContainer.innerHTML = ""; // Clear the loading message
+
+    querySnapshot.forEach((doc) => {
+      const post = doc.data(); // Retrieve document data
+      console.log("Datos del artículo:", post);
 
       const postElement = document.createElement('div');
       postElement.className = 'blog-post';
 
+      // Add image if available
+      let imageHtml = post.imageUrl
+        ? `<img src="${post.imageUrl}" alt="${post.title}" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">`
+        : "";
+
+      // Add video embed if available
       let videoHtml = post.videoId
         ? `<div class="video-container"><iframe src="https://www.youtube.com/embed/${post.videoId}" frameborder="0" allowfullscreen></iframe></div>`
         : "";
 
+      // Create the HTML structure for the blog post
       postElement.innerHTML = `
+        ${imageHtml}
         <h3>${post.title}</h3>
         <p>${post.content}</p>
         <p><strong>Autor:</strong> ${post.author}</p>
@@ -54,7 +57,8 @@ async function loadBlogPosts() {
         ${videoHtml}
         <hr>
       `;
-      blogContainer.appendChild(postElement);
+
+      blogContainer.appendChild(postElement); // Append post to the container
     });
 
     if (querySnapshot.empty) {
@@ -65,7 +69,6 @@ async function loadBlogPosts() {
     blogContainer.innerHTML = "<p>Error al cargar los artículos. Intenta nuevamente más tarde.</p>";
   }
 }
-
 
 // Load blog posts on page load
 document.addEventListener('DOMContentLoaded', loadBlogPosts);
