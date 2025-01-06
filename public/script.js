@@ -26,32 +26,26 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Function to load blog posts from Firestore
 async function loadBlogPosts() {
   const blogContainer = document.getElementById('blogPosts');
-  blogContainer.innerHTML = "<p>Cargando artículos...</p>"; // Loading message
-
+  blogContainer.innerHTML = "<p>Cargando artículos...</p>";
   try {
-    // Fetch all documents from the "blog" collection
+    console.log("Connecting to Firestore...");
     const querySnapshot = await getDocs(collection(db, "blog"));
-    blogContainer.innerHTML = ""; // Clear the loading message
+    console.log("Documents fetched:", querySnapshot.size);
 
+    blogContainer.innerHTML = ""; // Clear loading message
     querySnapshot.forEach(doc => {
-      const post = doc.data(); // Get the document data
+      const post = doc.data();
+      console.log("Post data:", post);
+
       const postElement = document.createElement('div');
       postElement.className = 'blog-post';
 
-      // Add video embed if it exists
-      let videoHtml = "";
-      if (post.videoId) {
-        videoHtml = `
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/${post.videoId}" frameborder="0" allowfullscreen></iframe>
-          </div>
-        `;
-      }
+      let videoHtml = post.videoId
+        ? `<div class="video-container"><iframe src="https://www.youtube.com/embed/${post.videoId}" frameborder="0" allowfullscreen></iframe></div>`
+        : "";
 
-      // Create the HTML structure for the blog post
       postElement.innerHTML = `
         <h3>${post.title}</h3>
         <p>${post.content}</p>
@@ -60,11 +54,9 @@ async function loadBlogPosts() {
         ${videoHtml}
         <hr>
       `;
-
-      blogContainer.appendChild(postElement); // Add the post to the container
+      blogContainer.appendChild(postElement);
     });
 
-    // If no posts are available
     if (querySnapshot.empty) {
       blogContainer.innerHTML = "<p>No hay artículos disponibles.</p>";
     }
@@ -73,6 +65,7 @@ async function loadBlogPosts() {
     blogContainer.innerHTML = "<p>Error al cargar los artículos. Intenta nuevamente más tarde.</p>";
   }
 }
+
 
 // Load blog posts on page load
 document.addEventListener('DOMContentLoaded', loadBlogPosts);
